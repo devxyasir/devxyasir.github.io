@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Yasir | AI Engineer & Generative AI Specialist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero-bg {
+            background: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.1) 0%, rgba(15, 23, 42, 1) 30%),
+                        radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.1) 0%, rgba(15, 23, 42, 1) 30%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.3);
+        }
+        
+        .tech-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .tech-icon:hover {
+            transform: scale(1.2);
+        }
+        
+        .glow {
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
+        }
+        
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+        
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: 0.15em solid #3b82f6;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: 0.15em;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #3b82f6 }
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translate(0,  0px); }
+            50%  { transform: translate(0, 15px); }
+            100%   { transform: translate(0, -0px); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Floating Collaboration Badge -->
+    <a href="mailto:jamyasir0534@gmail.com" class="fixed bottom-6 right-6 z-50 bg-indigo-600 text-white px-4 py-2 rounded-full shadow-lg flex items-center space-x-2 animate-pulse hover:bg-indigo-700 transition-colors">
+        <span>🚀</span>
+        <span>Available for Collaboration</span>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-slate-900/80 backdrop-blur-md z-40 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold gradient-text">YASIR</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-indigo-400 hover:text-indigo-300 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#about" class="text-slate-300 hover:text-indigo-300 px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="#projects" class="text-slate-300 hover:text-indigo-300 px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                        <a href="#skills" class="text-slate-300 hover:text-indigo-300 px-3 py-2 rounded-md text-sm font-medium">Skills</a>
+                        <a href="#contact" class="text-slate-300 hover:text-indigo-300 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-slate-300 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 backdrop-blur-md">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-indigo-400 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#about" class="text-slate-300 hover:text-indigo-300 block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#projects" class="text-slate-300 hover:text-indigo-300 block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+                <a href="#skills" class="text-slate-300 hover:text-indigo-300 block px-3 py-2 rounded-md text-base font-medium">Skills</a>
+                <a href="#contact" class="text-slate-300 hover:text-indigo-300 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h1 class="text-4xl md:text-6xl font-bold">
+                        <span class="gradient-text">Muhammad Yasir</span>
+                    </h1>
+                    <div class="typewriter text-xl md:text-2xl text-slate-300">
+                        <span id="typewriter-text"></span>
+                    </div>
+                    <p class="text-lg text-slate-400">
+                        Bridging the gap between artificial intelligence, cybersecurity, and full-stack development to build secure, intelligent systems.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-md font-medium transition duration-300">
+                            Get In Touch
+                        </a>
+                        <a href="#projects" class="border border-indigo-600 text-indigo-400 hover:bg-indigo-900/30 px-6 py-3 rounded-md font-medium transition duration-300">
+                            View Projects
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-indigo-500/10 rounded-xl blur"></div>
+                    <div class="relative bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700/50">
+                        <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80" 
+                             alt="AI and Cybersecurity" 
+                             class="w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold gradient-text inline-block">About Me</h2>
+                <p class="mt-4 text-slate-400 max-w-3xl mx-auto">
+                    Who I am and what I'm passionate about
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <p class="text-slate-300">
+                        I'm a multidisciplinary engineer with expertise in artificial intelligence, full-stack development, and cybersecurity. 
+                        My journey in technology began with a curiosity about how systems work, which evolved into a passion for building 
+                        secure, intelligent solutions that push boundaries.
+                    </p>
+                    <p class="text-slate-300">
+                        With over 5 years of experience, I've worked on diverse projects ranging from sentiment analysis models to 
+                        blockchain-based security systems. I thrive at the intersection of innovation and security, ensuring that 
+                        cutting-edge technologies are implemented with robust protection mechanisms.
+                    </p>
+                    <p class="text-slate-300">
+                        When I'm not coding, you can find me hosting my tech podcast "Secure Futures" where I discuss emerging trends in AI 
+                        and cybersecurity, or mentoring aspiring developers at local hackathons.
+                    </p>
+                    <div class="pt-4">
+                        <a href="https://drive.usercontent.google.com/u/0/uc?id=14Rtc6QLaxK_VU0LNQwSb8HIdTUB4bKxa&export=download" class="inline-flex items-center text-indigo-400 hover:text-indigo-300">
+                            <span>Download Resume</span>
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700/50">
+                        <div class="text-indigo-400 text-3xl mb-3">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-2">AI & ML Engineering</h3>
+                        <p class="text-slate-400 text-sm">
+                            Designing and implementing machine learning models for real-world applications.
+                        </p>
+                    </div>
+                    <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700/50">
+                        <div class="text-indigo-400 text-3xl mb-3">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Gen AI & Prompt Engineering</h3>
+                        <p class="text-slate-400 text-sm">
+                            Designing and optimizing prompts for LLMs and developing generative AI solutions.
+                        </p>
+                    </div>
+                    <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700/50">
+                        <div class="text-indigo-400 text-3xl mb-3">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Full-Stack Dev</h3>
+                        <p class="text-slate-400 text-sm">
+                            Building responsive, performant web applications with modern frameworks.
+                        </p>
+                    </div>
+                    <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700/50">
+                        <div class="text-indigo-400 text-3xl mb-3">
+                            <i class="fas fa-microphone-alt"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Public Speaking</h3>
+                        <p class="text-slate-400 text-sm">
+                            Sharing knowledge through talks, workshops, and my tech podcast.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold gradient-text inline-block">Featured Projects</h2>
+                <p class="mt-4 text-slate-400 max-w-3xl mx-auto">
+                    A selection of my recent work across AI, cybersecurity, and full-stack development
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="card-hover bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700/50 transition-all duration-300 hover:border-indigo-500/50">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1617791160536-598cf32026fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" 
+                             alt="Sentiment Analysis Dashboard" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold text-white">Sentiment Analysis Platform</h3>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-900 text-indigo-200">
+                                AI/ML
+                            </span>
+                        </div>
+                        <p class="text-slate-400 mb-4">
+                            Real-time sentiment analysis tool that processes social media data to gauge public opinion on trending topics.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-slate-700 text-slate-300">
+                                Python
+                            </span>
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-slate-700 text-slate-300">
+                                TensorFlow
+                            </span>
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-slate-700 text-slate-300">
+                                Flask
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="card-hover bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700/50 transition-all duration-300 hover:border-indigo-500/50">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80" 
+                             alt="Blockchain Vault" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold text-white">Blockchain Secure Vault</h3>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-900 text-green-200">
+                                Cybersecurity
+                            </span>
+                        </div>
+                        <p class="text-slate-400 mb-4">
+                            Decentralized document storage system with zero-knowledge encryption and blockchain-based access control.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-slate-700 text-slate-300">
+                                Solidity
+                            </span>
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-slate-700 text-slate-300">
+                                React
+                            </span>
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-slate-700 text-slate-300">
+                                IPFS
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="card-hover bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700/50 transition-all duration-300 hover:border-indigo-500/50">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                             alt="Sports Prediction Model" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold text-white">Sports Outcome Predictor</h3>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-900 text-indigo-200">
+                                AI/ML
+                            </span>
+                        </div>
+                        <p class="text-slate-400 mb-4">
+                            Machine learning model that analyzes historical data to predict match outcomes with 87% accuracy.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-slate-700 text-slate-300">
+                                Python
+                            </span>
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-slate-700 text-slate-300">
+                                Scikit-learn
+                            </span>
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-slate-700 text-slate-300">
+                                Pandas
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="card-hover bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700/50 transition-all duration-300 hover:border-indigo-500/50">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                             alt="Auto Repair System" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold text-white">Auto Repair Management</h3>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-900 text-blue-200">
+                                Full-Stack
+                            </span>
+                        </div>
+                        <p class="text-slate-400 mb-4">
+                            Comprehensive system for auto repair shops with inventory, CRM, and analytics capabilities.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-slate-700 text-slate-300">
+                                React
+                            </span>
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-slate-700 text-slate-300">
+                                Node.js
+                            </span>
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-slate-700 text-slate-300">
+                                MongoDB
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="card-hover bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700/50 transition-all duration-300 hover:border-indigo-500/50">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                             alt="Network Security Tool" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold text-white">Network Security Analyzer</h3>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-900 text-green-200">
+                                Cybersecurity
+                            </span>
+                        </div>
+                        <p class="text-slate-400 mb-4">
+                            Open-source tool for network vulnerability scanning and penetration testing with reporting features.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-slate-700 text-slate-300">
+                                Python
+                            </span>
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-slate-700 text-slate-300">
+                                Bash
+                            </span>
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-slate-700 text-slate-300">
+                                Nmap
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="card-hover bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700/50 transition-all duration-300 hover:border-indigo-500/50">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                             alt="Tech Podcast Platform" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold text-white">Secure Futures Podcast</h3>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-900 text-purple-200">
+                                Media
+                            </span>
+                        </div>
+                        <p class="text-slate-400 mb-4">
+                            Platform for my tech podcast discussing AI ethics, cybersecurity trends, and developer tools.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-slate-700 text-slate-300">
+                                Next.js
+                            </span>
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-slate-700 text-slate-300">
+                                Tailwind CSS
+                            </span>
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-slate-700 text-slate-300">
+                                Supabase
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <!-- <section class="py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold gradient-text inline-block">Certifications & Achievements</h2>
+                <p class="mt-4 text-slate-400 max-w-3xl mx-auto">
+                    Recognized credentials and accomplishments in AI and technology
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                 
+                <div class="bg-slate-800/50 p-8 rounded-xl border border-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
+                    <div class="text-indigo-400 text-4xl mb-4">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Generative AI Professional</h3>
+                    <p class="text-slate-400 mb-4">
+                        Advanced certification in prompt engineering and LLM applications from AI Institute
+                    </p>
+                    <div class="text-xs text-indigo-400 font-mono">Issued: 2023</div>
+                </div>
+                
+                 
+                <div class="bg-slate-800/50 p-8 rounded-xl border border-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
+                    <div class="text-indigo-400 text-4xl mb-4">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">AI Hackathon Winner</h3>
+                    <p class="text-slate-400 mb-4">
+                        First place in Global AI Challenge for innovative multimodal generation system
+                    </p>
+                    <div class="text-xs text-indigo-400 font-mono">Awarded: 2022</div>
+                </div>
+                
+                
+                <div class="bg-slate-800/50 p-8 rounded-xl border border-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
+                    <div class="text-indigo-400 text-4xl mb-4">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">TensorFlow Developer</h3>
+                    <p class="text-slate-400 mb-4">
+                        Certified TensorFlow developer with specialization in generative models
+                    </p>
+                    <div class="text-xs text-indigo-400 font-mono">Issued: 2021</div>
+                </div>
+                
+            
+                <div class="bg-slate-800/50 p-8 rounded-xl border border-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
+                    <div class="text-indigo-400 text-4xl mb-4">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Top 10 AI Researcher</h3>
+                    <p class="text-slate-400 mb-4">
+                        Recognized by TechReview for contributions to prompt optimization techniques
+                    </p>
+                    <div class="text-xs text-indigo-400 font-mono">Awarded: 2023</div>
+                </div>
+                
+             
+                <div class="bg-slate-800/50 p-8 rounded-xl border border-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
+                    <div class="text-indigo-400 text-4xl mb-4">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">LLM Specialist</h3>
+                    <p class="text-slate-400 mb-4">
+                        Certified in large language model deployment and optimization
+                    </p>
+                    <div class="text-xs text-indigo-400 font-mono">Issued: 2023</div>
+                </div>
+                
+         
+                <div class="bg-slate-800/50 p-8 rounded-xl border border-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
+                    <div class="text-indigo-400 text-4xl mb-4">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Innovation Excellence</h3>
+                    <p class="text-slate-400 mb-4">
+                        Recognized for developing novel prompt chaining techniques
+                    </p>
+                    <div class="text-xs text-indigo-400 font-mono">Awarded: 2022</div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold gradient-text inline-block">Tech Stack</h2>
+                <p class="mt-4 text-slate-400 max-w-3xl mx-auto">
+                    Tools and technologies I work with regularly
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <!-- Tech Item 1 -->
+                <div class="tech-icon bg-slate-800/50 p-6 rounded-xl border border-slate-700/50 flex flex-col items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="h-12 w-12 mb-3" alt="Python">
+                    <span class="text-sm text-slate-300">Python</span>
+                </div>
+                
+                <!-- Tech Item 2 -->
+                <div class="tech-icon bg-slate-800/50 p-6 rounded-xl border border-slate-700/50 flex flex-col items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="h-12 w-12 mb-3" alt="JavaScript">
+                    <span class="text-sm text-slate-300">JavaScript</span>
+                </div>
+                
+                <!-- Tech Item 3 -->
+                <div class="tech-icon bg-slate-800/50 p-6 rounded-xl border border-slate-700/50 flex flex-col items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="h-12 w-12 mb-3" alt="React">
+                    <span class="text-sm text-slate-300">React</span>
+                </div>
+                
+                <!-- Tech Item 4 -->
+                <div class="tech-icon bg-slate-800/50 p-6 rounded-xl border border-slate-700/50 flex flex-col items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="h-12 w-12 mb-3" alt="Node.js">
+                    <span class="text-sm text-slate-300">Node.js</span>
+                </div>
+                
+                <!-- Tech Item 5 -->
+                <div class="tech-icon bg-slate-800/50 p-6 rounded-xl border border-slate-700/50 flex flex-col items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" class="h-12 w-12 mb-3" alt="TensorFlow">
+                    <span class="text-sm text-slate-300">TensorFlow</span>
+                </div>
+                
+                <!-- Tech Item 6 -->
+                <div class="tech-icon bg-slate-800/50 p-6 rounded-xl border border-slate-700/50 flex flex-col items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="h-12 w-12 mb-3" alt="Docker">
+                    <span class="text-sm text-slate-300">Docker</span>
+                </div>
+                
+                <!-- Tech Item 7 -->
+                <div class="tech-icon bg-slate-800/50 p-6 rounded-xl border border-slate-700/50 flex flex-col items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" class="h-12 w-12 mb-3" alt="Linux">
+                    <span class="text-sm text-slate-300">Linux</span>
+                </div>
+                
+                <!-- Tech Item 8 -->
+                <div class="tech-icon bg-slate-800/50 p-6 rounded-xl border border-slate-700/50 flex flex-col items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" class="h-12 w-12 mb-3" alt="Kubernetes">
+                    <span class="text-sm text-slate-300">Kubernetes</span>
+                </div>
+                
+                <!-- Tech Item 9 -->
+                <div class="tech-icon bg-slate-800/50 p-6 rounded-xl border border-slate-700/50 flex flex-col items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="h-12 w-12 mb-3" alt="MongoDB">
+                    <span class="text-sm text-slate-300">MongoDB</span>
+                </div>
+                
+                <!-- Tech Item 10 -->
+                <div class="tech-icon bg-slate-800/50 p-6 rounded-xl border border-slate-700/50 flex flex-col items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" class="h-12 w-12 mb-3" alt="PostgreSQL">
+                    <span class="text-sm text-slate-300">PostgreSQL</span>
+                </div>
+                
+                <!-- Tech Item 11 -->
+                <div class="tech-icon bg-slate-800/50 p-6 rounded-xl border border-slate-700/50 flex flex-col items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" class="h-12 w-12 mb-3" alt="FastAPI">
+                    <span class="text-sm text-slate-300">FastAPI</span>
+                </div>
+                
+                <!-- Tech Item 12 -->
+                <div class="tech-icon bg-slate-800/50 p-6 rounded-xl border border-slate-700/50 flex flex-col items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" class="h-12 w-12 mb-3" alt="Terraform">
+                    <span class="text-sm text-slate-300">Terraform</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold gradient-text inline-block">Testimonials</h2>
+                <p class="mt-4 text-slate-400 max-w-3xl mx-auto">
+                    What colleagues and clients say about working with me
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-slate-800/50 p-8 rounded-xl border border-slate-700/50">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0 mr-4">
+                            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson">
+                        </div>
+                        <input type="hidden" name="_form" value="contact">
+                        <div id="form-status" class="hidden"></div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-white">Sarah Johnson</h4>
+                            <p class="text-indigo-400 text-sm">CTO at TechForward</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 italic">
+                        "Yasir's work on our AI sentiment analysis tool was exceptional. He not only delivered ahead of schedule but also implemented security measures we hadn't even considered. His ability to bridge AI and security is rare and valuable."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-slate-800/50 p-8 rounded-xl border border-slate-700/50">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0 mr-4">
+                            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/men/45.jpg" alt="Michael Chen">
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-white">Michael Chen</h4>
+                            <p class="text-indigo-400 text-sm">Lead Developer at SecureNet</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 italic">
+                        "Working with Yasir on our blockchain vault project was a game-changer. His deep understanding of both cryptography and full-stack development made him the perfect architect for this complex system."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-slate-800/50 p-8 rounded-xl border border-slate-700/50">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0 mr-4">
+                            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Aisha Rahman">
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-white">Aisha Rahman</h4>
+                            <p class="text-indigo-400 text-sm">Podcast Producer</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 italic">
+                        "Yasir brings incredible energy and insight to our 'Secure Futures' podcast. He has a unique ability to break down complex tech topics into engaging discussions that appeal to both experts and beginners."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog/News Section -->
+    <section class="py-20 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold gradient-text inline-block">Latest Insights</h2>
+                <p class="mt-4 text-slate-400 max-w-3xl mx-auto">
+                    Recent articles and thoughts on AI, cybersecurity, and development
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <div class="card-hover bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700/50">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://www.strongboxit.com/wp-content/uploads/2025/02/What-is-AI-Security-How-to-Protect-Your-AI-Models-from-Adversarial-Attacks-04.jpg.webp" 
+                             alt="AI Security" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-slate-500 mb-2">
+                            <span>June 15, 2023</span>
+                            <span class="mx-2">•</span>
+                            <span>8 min read</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-3">Securing AI Models Against Adversarial Attacks</h3>
+                        <p class="text-slate-400 mb-4">
+                            Exploring defensive techniques to protect machine learning models from manipulation and data poisoning.
+                        </p>
+                        <a href="#read-article" data-article="ai-security" class="text-indigo-400 hover:text-indigo-300 text-sm font-medium inline-flex items-center read-article-btn">
+                            Read Article
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 2 -->
+                <div class="card-hover bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700/50">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                             alt="Blockchain Security" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-slate-500 mb-2">
+                            <span>May 28, 2023</span>
+                            <span class="mx-2">•</span>
+                            <span>6 min read</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-3">Smart Contract Security Best Practices</h3>
+                        <p class="text-slate-400 mb-4">
+                            Lessons learned from auditing dozens of smart contracts and how to write more secure blockchain code.
+                        </p>
+                        <a href="#read-article" data-article="smart-contract" class="text-indigo-400 hover:text-indigo-300 text-sm font-medium inline-flex items-center read-article-btn">
+                            Read Article
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 3 -->
+                <div class="card-hover bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700/50">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=765&q=80" 
+                             alt="DevOps Security" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-slate-500 mb-2">
+                            <span>May 10, 2023</span>
+                            <span class="mx-2">•</span>
+                            <span>10 min read</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-3">Implementing Zero Trust in CI/CD Pipelines</h3>
+                        <p class="text-slate-400 mb-4">
+                            How to apply zero trust principles to your development workflows to prevent supply chain attacks.
+                        </p>
+                        <a href="#read-article" data-article="zero-trust" class="text-indigo-400 hover:text-indigo-300 text-sm font-medium inline-flex items-center read-article-btn">
+                            Read Article
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold gradient-text inline-block">Get In Touch</h2>
+                <p class="mt-4 text-slate-400 max-w-3xl mx-auto">
+                    Have a project in mind or want to discuss potential collaboration? Reach out!
+                </p>
+            </div>
+            
+ 
+ 
+                
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-white mb-4">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 text-indigo-400 mt-1">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="text-sm font-medium text-slate-400">Email</p>
+                                    <div class="flex items-center mt-1">
+                                        <p class="text-slate-300">jamyasir0534@gmail.com</p>
+                                        <button id="copy-email" class="ml-2 text-indigo-400 hover:text-indigo-300" title="Copy to clipboard">
+                                            <i class="far fa-copy"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 text-indigo-400 mt-1">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="text-sm font-medium text-slate-400">Location</p>
+                                    <p class="text-slate-300 mt-1">Lodhran, Punjab, Pakistan</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 text-indigo-400 mt-1">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="text-sm font-medium text-slate-400">Availability</p>
+                                    <p class="text-slate-300 mt-1">Open for freelance & collaboration</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-white mb-4">Connect With Me</h3>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/devxyasir" target="_blank" class="w-10 h-10 flex items-center justify-center bg-slate-800 hover:bg-indigo-600 rounded-full text-slate-300 hover:text-white transition duration-300">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/devxyasir" target="_blank" class="w-10 h-10 flex items-center justify-center bg-slate-800 hover:bg-indigo-600 rounded-full text-slate-300 hover:text-white transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://x.com/devxyasir" target="_blank" class="w-10 h-10 flex items-center justify-center bg-slate-800 hover:bg-indigo-600 rounded-full text-slate-300 hover:text-white transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://instagram.com/devxyasir" target="_blank" class="w-10 h-10 flex items-center justify-center bg-slate-800 hover:bg-indigo-600 rounded-full text-slate-300 hover:text-white transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://facebook.com/devxyasir" target="_blank" class="w-10 h-10 flex items-center justify-center bg-slate-800 hover:bg-indigo-600 rounded-full text-slate-300 hover:text-white transition duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://bsky.app/profile/devxyasir" target="_blank" class="w-10 h-10 flex items-center justify-center bg-slate-800 hover:bg-indigo-600 rounded-full text-slate-300 hover:text-white transition duration-300">
+                                <i class="fas fa-cloud"></i>
+                            </a>
+                            <a href="https://huggingface.co/devxyasir" target="_blank" class="w-10 h-10 flex items-center justify-center bg-slate-800 hover:bg-indigo-600 rounded-full text-slate-300 hover:text-white transition duration-300">
+                                <i class="fas fa-robot"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700/50">
+                        <h3 class="text-lg font-semibold text-white mb-3">Let's Work Together</h3>
+                        <p class="text-slate-400 mb-4">
+                            Interested in collaborating on a project? I'm always open to discussing new opportunities.
+                        </p>
+                        <a href="#contact" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-medium">
+                            Start a conversation
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900/80 border-t border-slate-800 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold gradient-text">YASIR</a>
+                    <span class="ml-4 text-sm text-slate-500">© 2023 Muhammad Yasir. All rights reserved.</span>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <nav class="flex space-x-6">
+                        <a href="#home" class="text-slate-400 hover:text-indigo-400 text-sm font-medium">Home</a>
+                        <a href="#about" class="text-slate-400 hover:text-indigo-400 text-sm font-medium">About</a>
+                        <a href="#projects" class="text-slate-400 hover:text-indigo-400 text-sm font-medium">Projects</a>
+                        <a href="#contact" class="text-slate-400 hover:text-indigo-400 text-sm font-medium">Contact</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Article Modal -->
+    <div id="article-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+        <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                <div class="absolute inset-0 bg-slate-900/90 backdrop-blur-sm"></div>
+            </div>
+            
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            
+            <div class="inline-block align-bottom bg-slate-800 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-3xl sm:w-full">
+                <div class="px-6 py-4">
+                    <div class="flex justify-between items-start">
+                        <h3 id="article-title" class="text-2xl font-bold text-white"></h3>
+                        <button id="close-modal" class="text-slate-400 hover:text-white">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="mt-2">
+                        <p id="article-date" class="text-sm text-slate-400"></p>
+                        <div id="article-content" class="mt-4 text-slate-300 prose prose-invert max-w-none"></div>
+                    </div>
+                </div>
+                <div class="px-6 py-4 bg-slate-800/50 border-t border-slate-700 flex justify-end">
+                    <button id="close-modal-btn" type="button" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 rounded-md text-white">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Typewriter effect
+        const typewriterTexts = [
+            "AI & Machine Learning Engineer",
+            "Full-Stack Web Developer",
+            "Cybersecurity Specialist",
+            "Creative Problem Solver",
+            "Tech Podcast Host"
+        ];
+        
+        let currentTextIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let isEnd = false;
+        
+        function typeWriter() {
+            const element = document.getElementById('typewriter-text');
+            const currentText = typewriterTexts[currentTextIndex];
+            
+            if (isDeleting) {
+                element.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                element.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            if (!isDeleting && charIndex === currentText.length) {
+                isEnd = true;
+                isDeleting = true;
+                setTimeout(typeWriter, 2000); // Pause at end of text
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                currentTextIndex++;
+                if (currentTextIndex >= typewriterTexts.length) {
+                    currentTextIndex = 0;
+                }
+                setTimeout(typeWriter, 500); // Pause before typing next text
+            } else {
+                const speed = isDeleting ? 100 : 150;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        
+        // Start the typewriter effect
+        setTimeout(typeWriter, 1000);
+
+        // Article data
+        const articles = {
+            "ai-security": {
+                title: "Securing AI Models Against Adversarial Attacks",
+                date: "June 15, 2023 • 8 min read",
+                content: `
+                    <p>Adversarial attacks on machine learning models have become increasingly sophisticated in recent years. In this article, we explore the most common types of attacks and effective defense strategies.</p>
+                    
+                    <h4>Types of Adversarial Attacks</h4>
+                    <ul>
+                        <li>Evasion attacks: Manipulating input data to cause misclassification</li>
+                        <li>Poisoning attacks: Injecting malicious data during training</li>
+                        <li>Model extraction: Stealing model architecture through API queries</li>
+                    </ul>
+                    
+                    <h4>Defensive Techniques</h4>
+                    <p>Several approaches have proven effective against adversarial attacks:</p>
+                    <ol>
+                        <li><strong>Adversarial Training:</strong> Augmenting training data with adversarial examples</li>
+                        <li><strong>Defensive Distillation:</strong> Training a secondary model to smooth decision boundaries</li>
+                        <li><strong>Input Validation:</strong> Statistical checks for anomalous inputs</li>
+                        <li><strong>Randomized Smoothing:</strong> Adding controlled noise to inputs</li>
+                    </ol>
+                    
+                    <p>Implementing these techniques requires careful consideration of your model's architecture and threat model. The most secure systems employ multiple layers of defense.</p>
+                `
+            },
+            "smart-contract": {
+                title: "Smart Contract Security Best Practices",
+                date: "May 28, 2023 • 6 min read",
+                content: `
+                    <p>After auditing dozens of smart contracts, I've compiled these essential security practices for blockchain developers.</p>
+                    
+                    <h4>Critical Vulnerabilities</h4>
+                    <ul>
+                        <li>Reentrancy attacks</li>
+                        <li>Integer overflow/underflow</li>
+                        <li>Unchecked return values</li>
+                        <li>Front-running</li>
+                    </ul>
+                    
+                    <h4>Best Practices</h4>
+                    <ol>
+                        <li>Use established libraries like OpenZeppelin</li>
+                        <li>Implement proper access controls</li>
+                        <li>Include circuit breakers for emergency stops</li>
+                        <li>Use pull over push for payments</li>
+                        <li>Test extensively with tools like MythX</li>
+                    </ol>
+                    
+                    <p>Remember: Once deployed, smart contracts cannot be modified. Security must be prioritized from day one.</p>
+                `
+            },
+            "zero-trust": {
+                title: "Implementing Zero Trust in CI/CD Pipelines",
+                date: "May 10, 2023 • 10 min read",
+                content: `
+                    <p>Traditional security models fail to protect modern development pipelines. Zero Trust architecture provides a more robust approach.</p>
+                    
+                    <h4>Core Principles</h4>
+                    <ul>
+                        <li>Never trust, always verify</li>
+                        <li>Least privilege access</li>
+                        <li>Assume breach mentality</li>
+                    </ul>
+                    
+                    <h4>Implementation Steps</h4>
+                    <ol>
+                        <li>Segment your pipeline into micro-perimeters</li>
+                        <li>Require multi-factor authentication for all access</li>
+                        <li>Implement just-in-time access controls</li>
+                        <li>Monitor all pipeline activity</li>
+                        <li>Use artifact signing and verification</li>
+                    </ol>
+                    
+                    <p>Transitioning to Zero Trust requires cultural change as much as technical implementation, but the security benefits are substantial.</p>
+                `
+            }
+        };
+
+        // Modal handling
+        const modal = document.getElementById('article-modal');
+        const closeButtons = ['close-modal', 'close-modal-btn'].map(id => document.getElementById(id));
+        
+        // Handle article clicks
+        document.querySelectorAll('.read-article-btn').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const articleId = this.getAttribute('data-article');
+                const article = articles[articleId];
+                
+                if (article) {
+                    document.getElementById('article-title').textContent = article.title;
+                    document.getElementById('article-date').textContent = article.date;
+                    document.getElementById('article-content').innerHTML = article.content;
+                    modal.classList.remove('hidden');
+                    document.body.classList.add('overflow-hidden');
+                }
+            });
+        });
+        
+        // Close modal handlers
+        closeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                modal.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            });
+        });
+        
+        // Contact form submission
+        const form = document.querySelector('form');
+        const formStatus = document.getElementById('form-status');
+        
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalBtnText = submitBtn.textContent;
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
+                
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form),
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        formStatus.textContent = 'Message sent successfully! I\'ll get back to you soon.';
+                        formStatus.className = 'px-4 py-3 rounded-md text-sm mb-4 bg-green-900/50 text-green-400';
+                        formStatus.classList.remove('hidden');
+                        form.reset();
+                    } else {
+                        const errorData = await response.json();
+                        throw new Error(errorData.error || 'Form submission failed');
+                    }
+                } catch (error) {
+                    formStatus.innerHTML = `<i class="fas fa-exclamation-circle mr-2"></i> Error: ${error.message || 'Failed to send message. Please try again later.'}`;
+                    formStatus.className = 'px-4 py-3 rounded-md text-sm mb-4 bg-red-900/50 text-red-400 flex items-center';
+                    formStatus.classList.remove('hidden');
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalBtnText;
+                    setTimeout(() => {
+                        formStatus.classList.add('hidden');
+                    }, 8000);
+                }
+            });
+        }
+
+        // Copy email to clipboard
+        document.getElementById('copy-email').addEventListener('click', function() {
+            const email = 'jamyasir0534@gmail.com';
+            navigator.clipboard.writeText(email).then(function() {
+                const tooltip = document.createElement('span');
+                tooltip.textContent = 'Copied!';
+                tooltip.className = 'absolute bg-slate-800 text-white text-xs px-2 py-1 rounded -mt-8 ml-2';
+                this.appendChild(tooltip);
+                setTimeout(() => tooltip.remove(), 2000);
+            }.bind(this));
+        });
+        
+        // Scroll animation for sections
+        function checkVisibility() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const isVisible = (rect.top <= window.innerHeight * 0.75) && (rect.bottom >= 0);
+                
+                if (isVisible) {
+                    section.classList.add('visible');
+                }
+            });
+        }
+        
+        // Initialize sections with section class
+        document.querySelectorAll('section:not(#home)').forEach(section => {
+            section.classList.add('section');
+        });
+        
+        // Check visibility on load and scroll
+        window.addEventListener('load', checkVisibility);
+        window.addEventListener('scroll', checkVisibility);
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!document.getElementById('mobile-menu').classList.contains('hidden')) {
+                        document.getElementById('mobile-menu').classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
